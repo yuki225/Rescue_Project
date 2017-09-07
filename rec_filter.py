@@ -5,8 +5,6 @@ import pyaudio
 import numpy as np
 import scipy.signal
 
-
-
 """マイクからの音声を録音する関数rec"""
 
 def rec(CHUNK, FORMAT, CHANNELS, RATE, RECORD_SECONDS, WAVE_OUTPUT_FILENAME):
@@ -58,53 +56,6 @@ def fft(b, y, fs):
     B = np.fft.fft(b[0:N])
     freqList = np.fft.fftfreq(N, d=1.0/fs)
     spectrum = [np.sqrt(c.real ** 2 + c.imag ** 2) for c in B]
-
-    """
-    ###############################グラフ表示部分##################################
-
-    # フィルタ係数の波形領域
-    subplot(221) #プロットの表示順序（221は2×2マスの左上）
-    plot(range(0, N), b[0:N])
-    axis([0, N, -0.5, 0.5])
-    xlabel("time [sample]")
-    ylabel("amplitude")
-    title("Waveform region of filter coefficient")
-
-    # フィルタ係数の周波数領域
-    subplot(223) #223は2×2マスの左下
-    n = len(freqList) / 2
-    plot(freqList[:n], spectrum[:n], linestyle='-')
-    axis([0, fs/2, 0, 1.2])
-    xlabel("frequency [Hz]")
-    ylabel("spectrum")
-    title("Frequency range of filter coefficients")
-
-    # フィルタされた波形のFFT
-    Y = np.fft.fft(y[0:N])
-    freqList = np.fft.fftfreq(N, d=1.0/fs)
-    spectrum = [np.sqrt(c.real ** 2 + c.imag ** 2) for c in Y]
-
-    # 波形を描画
-    subplot(222)
-    plot(range(0, N), y[0:N])
-    axis([0, N, -1.0, 1.0])
-    xlabel("time [sample]")
-    ylabel("amplitude")
-    title("Waveform")
-
-    # 振幅スペクトルを描画
-    subplot(224)
-    n = len(freqList) / 2
-    plot(freqList[:n], spectrum[:n], linestyle='-')
-    axis([0, fs/2, 0, 10])
-    xlabel("frequency [Hz]")
-    ylabel("spectrum")
-    title("Amplitude spectrum")
-
-    show()
-
-    ############################################################################
-    """
 
 def save(data, fs, bit, filename):
     """波形データをWAVEファイルへ出力"""
