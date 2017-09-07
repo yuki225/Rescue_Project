@@ -4,7 +4,7 @@ import wave
 import pyaudio
 import numpy as np
 import scipy.signal
-from pylab import *
+
 
 
 """マイクからの音声を録音する関数rec"""
