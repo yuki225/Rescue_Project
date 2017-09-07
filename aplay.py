@@ -2,4 +2,4 @@
 
 import subprocess
 
-subprocess.call("aplay ファイル名.wav", shell=True)
+subprocess.call("aplay human_voice.wav", shell=True)
