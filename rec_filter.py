@@ -99,4 +99,4 @@ if __name__ == '__main__':
     # 音声バイナリに戻して保存
     y = [short(v * 32767.0) for v in y]     #int(v*32767.0)をshort(v*32767.0に変更)
     y = struct.pack("h" * len(y), *y)
-    save(y, 2 * fs, 16, "human_voice_filtered.wav")     #fsだと保存される音声ファイルの時間が元の2倍となったため2*fsに変更
+    save(y, fs, 16, "human_voice_filtered.wav")     #fsだと保存される音声ファイルの時間が元の2倍となったため2*fsに変更
