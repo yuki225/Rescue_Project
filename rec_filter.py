@@ -69,7 +69,7 @@ def save(data, fs, bit, filename):
 
 if __name__ == '__main__':
     #録音開始(引数は左からCHUNK, FORMAT, CHANNELS, RATE, RECORD_SECONDS, WAVE_OUTPUT_FILENAME)
-    rec(1024, pyaudio.paInt16, 1, 16000, 5, "human_voice.wav")
+    rec(1024, pyaudio.paInt16, 1, 16000, 3, "human_voice.wav")
 
     wf = wave.open("human_voice.wav", "r")
     fs = wf.getframerate()
@@ -81,8 +81,8 @@ if __name__ == '__main__':
 
     # フィルタの設計
     # ナイキスト周波数が1になるように正規化
-    fe1 = 200.0 / nyq      # カットオフ周波数1
-    fe2 = 2000.0 / nyq      # カットオフ周波数2
+    fe1 = 300.0 / nyq      # カットオフ周波数1
+    fe2 = 3200.0 / nyq      # カットオフ周波数2
     numtaps = 255           # フィルタ係数（タップ）の数（要奇数）
 
 #    b = scipy.signal.firwin(numtaps, fe1)                         # Low-pass

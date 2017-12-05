@@ -1,0 +1,7 @@
+sentence1:  助け て 。
+wseq1: <s> 助け+動詞 て+助詞 </s>
+phseq1: silB | t a s u k e | t e | silE
+cmscore1: 0.432 0.537 0.131 1.000
+score1: -6349.781250 (AM: -6281.529297  LM: -68.251808)
+Wed Sep 13 17:30:17 JST 2017
+Longitude=1397957839 Latitude=356612190 height=118613 hMSL=79157 hAcc=23724 vAcc=28619
