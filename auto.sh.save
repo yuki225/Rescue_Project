@@ -1,4 +1,4 @@
-#!/bin/sh
+julius -C ~/julius-kits/dictation-kit-v4.4/word.jconf -outfile -input rawfile#!/bin/sh
 for i in `seq 1 10`
 do
   cd ~/Rescue_Project
