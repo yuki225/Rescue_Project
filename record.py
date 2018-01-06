@@ -69,7 +69,7 @@ def save(data, fs, bit, filename):
 
 if __name__ == '__main__':
     #録音開始(引数は左からCHUNK, FORMAT, CHANNELS, RATE, RECORD_SECONDS, WAVE_OUTPUT_FILENAME)
-    rec(1024, pyaudio.paInt16, 1, 16000, 3, "human_voice.wav")
+    rec(1024, pyaudio.paInt16, 1, 16000, 1.5, "human_voice.wav")
 
     wf = wave.open("human_voice.wav", "r")
     fs = wf.getframerate()
